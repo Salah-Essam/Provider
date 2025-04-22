@@ -29,7 +29,10 @@ class MyHomePage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     FloatingActionButton(
-                      onPressed: counterProvider.decrement,
+                      onPressed:
+                          () => counterProvider.selectType(
+                            counterProvider.TypesOfCounter[1],
+                          ),
                       child: const Icon(Icons.remove),
                     ),
                     const SizedBox(width: 20),
@@ -39,7 +42,10 @@ class MyHomePage extends StatelessWidget {
                     ),
                     const SizedBox(width: 20),
                     FloatingActionButton(
-                      onPressed: counterProvider.increment,
+                      onPressed:
+                          () => counterProvider.selectType(
+                            counterProvider.TypesOfCounter[0],
+                          ),
                       child: const Icon(Icons.add),
                     ),
                   ],

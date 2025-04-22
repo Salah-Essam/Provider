@@ -5,6 +5,10 @@ class CounterProvider with ChangeNotifier {
 
   int get counter => _counter;
 
+  List<String> TypesOfCounter = ['increment', 'decrement'];
+
+  int get typesOfCounterLength => TypesOfCounter.length;
+
   void increment() {
     _counter++;
     notifyListeners();
@@ -18,5 +22,13 @@ class CounterProvider with ChangeNotifier {
   void reset() {
     _counter = 0;
     notifyListeners();
+  }
+
+  void selectType(String type) {
+    if (type == 'increment') {
+      increment();
+    } else if (type == 'decrement') {
+      decrement();
+    }
   }
 }
